@@ -5,7 +5,7 @@ Using my own [NeuralNetwork code](https://github.com/ta9ay/NeuralNet-from-scratc
 #### Possible Improvements:
 1. The scoring mechanism to record each bird's score might be improved.
 2. Saving the best bird and then having the option to load that bird.
-
+![screen: ](https://github.com/ta9ay/NeuroEvolution-FlappyBird/blob/master/Screenshot.png)
 ### Requirements
 1. PyGame
 2. NumPy
