@@ -20,6 +20,7 @@ maxFPS = 30
 groundLevel = 400
 skyLevel = 0
 highScore = 0
+currentScore = 0
 # Global colors
 birdColor = pygame.Color(32,32,32,100)
 backgroundColor = pygame.Color('#abcdef')
@@ -255,6 +256,7 @@ newGeneration()
 
 # Called to reset the game when you lose
 def resetGame():
+    global currentScore
     global highScore
 
     if ( bird.pipescore > highScore ):
@@ -266,7 +268,7 @@ def resetGame():
 
     windowObj.fill(pygame.Color('#230056'))
     newGeneration(firstgen=False)
-
+    currentScore = 0
 
 
 def pause():
@@ -333,7 +335,7 @@ while True:
             if (pipe.pos + pipe.width == bird.pos[0] ):
                 bird.score += 10
                 bird.pipescore +=1
-                
+                currentScore +=1
                 pipe.scored = True
             
             
@@ -341,7 +343,7 @@ while True:
             resetGame()
 
         # Draw stuff
-        scoreSurface = fontObj.render( 'Score: ' + str(highScore) + ' Gen: ' + str(GENERATION), False, fontColor)
+        scoreSurface = fontObj.render( 'Score: ' + str(currentScore) + ' HighScore: ' + str(highScore) + ' Gen: ' + str(GENERATION), False, fontColor)
         scoreRect = scoreSurface.get_rect()
         scoreRect.topleft = (windowObj.get_height() / 2 , 10)
         windowObj.blit(scoreSurface, scoreRect)
