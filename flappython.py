@@ -123,7 +123,7 @@ class Bird:
     
     def jump(self):
         self.score+=1
-        self.velocity = -15
+        self.velocity = -18
     
     def think(self,pipes):
         """
